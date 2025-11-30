@@ -338,48 +338,73 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- Method / Section block -->
+<section class="section curlyfm-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+        <h2 class="title is-3 has-text-centered eqm-title">Curly Flow Matching</h2>
+
+        <div class="content eqm-text">
+          <p>
+            Curly Flow Matching (Curly-FM) is a flow-based model that aims to learn non-gradient field dynamics in complex systems which evolve 
+            with respect to some prescribed non-zero drift reference process. In this paper we solve non-zero drift Schrödinger Bridge (SB) problem
+            in order to learn periodic or cyclical patterns in the data. 
+          </p>
+
+          <p>
+            To train a Curly Flow Matching model, we assume access to velocity information prior. For example, this can be RNA velocity in 
+            single-cell data or fluid particle velocity in turbulent flows. We model non-gradient field dynamics by decomposing this problem 
+            into a two-staged algorithm where first stage learns neural bridge matching the bridge to designed reference process and second stage 
+            where we learn couplings and transport plan between marginal data distributions. 
+          </p>
+
+          <p>
+            Because of its simulation-free nature, Curly-FM surpasses other simualation-based methods in its computational speed and efficiency. 
+            Further, given Curly-FM considers non-zero reference process with real velocity priors, it offers an interpretable framework for
+            analyzing trajectories across real-world domains.
+          </p>
+        </div>
+
+        <div class="columns is-variable is-6 algos-row">
+  <!-- Algorithm 1 -->
+  <div class="column">
+    <div class="algo-box">
+      <div class="algo-box-title">
+        <strong>Algorithm 1</strong> Training algorithm for neural path interpolant network
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
+      <pre class="algo-pre"><code><strong>Require:</strong> Marginals ρ₀(x₀) and ρ₁(x₁), network φ_η, reference drift f_{t,η}
+
+1: while Training do
+2: │   Sample (x₀, x₁, t) ~ ρ₀(x₀) ρ₁(x₁) 𝒰(0,1)
+3: │   μ_{t,η} = (1−t)x₀ + t x₁ + t(1−t) φ_{t,η}(x₀, x₁)
+4: │   ∂μ_{t,η}/∂t = x₁ − x₀ + t(1−t) ∂φ_{t,η}(x₀, x₁)/∂t + (1−2t) φ_{t,η}(x₀, x₁)
+5: │   ℒ(η) = ‖ ∂μ_{t,η}/∂t − f_{t,η}(μ_{t,η}) ‖₂²
+6: │   η ← Update(η, ∇_η ℒ(η))
+return φ_{t,η}</code></pre>
+    </div>
+  </div>
+
+  <!-- Algorithm 2 -->
+  <div class="column">
+    <div class="algo-box">
+      <div class="algo-box-title">
+        <strong>Algorithm 2</strong> Marginal Score and Flow Matching
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
+      <pre class="algo-pre"><code><strong>Require:</strong> Marginals ρ₀(x₀) and ρ₁(x₁), network φ_η, vector field network v_{t,θ}
+
+1: while Training do
+2: │   Sample (x₀, x₁, t_{ij}) ~ ρ₀(x₀) ρ₁(x₁) 𝒰(0,1)
+3: │   C_η^{ij}(x₀^i, x₁^j) = 𝔼_t [ ‖ ∂μ_{t,η}/∂t − f_{t,η}(μ_{t,η}) ‖₂² ]
+4: │   (x₀, x₁) ~ π(x₀, x₁) ← OT(x₀, x₁; C_η)
+5: │   t ~ 𝒰(0,1), ε ~ 𝒩(0,1)
+6: │   ℒ(θ) = ℒ_flow(θ) + ℒ_score(θ)
+7: │   θ ← Update(θ, ∇_θ ℒ(θ))
+return v_θ</code></pre>
     </div>
   </div>
 </div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
 
 
 <!-- Youtube video -->
