@@ -810,4 +810,42 @@ section.teaser-figure.section {
   margin: 1rem auto 0 auto; /* centers the paragraph block */
 }
 
+.algos-row { margin-top: 1.25rem; }
+
+.algo-box {
+  background: #fff;
+  border-top: 3px solid #111;
+  border-bottom: 3px solid #111;
+  padding: 0.9rem 1rem 0.8rem;
+}
+
+.algo-box-title {
+  font-size: 1.05rem;
+  color: #111;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #111;
+  margin-bottom: 0.6rem;
+}
+
+.algo-pre {
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+
+  font-family: "SF Mono","Monaco","Cascadia Code","Roboto Mono",monospace !important;
+  font-size: 0.95rem !important;
+  line-height: 1.45 !important;
+  white-space: pre-wrap;   /* wraps on small screens */
+  word-break: break-word;
+  color: #111;
+}
+
+.algo-pre code {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+
 
