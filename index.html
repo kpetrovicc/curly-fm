@@ -278,22 +278,25 @@
 <!-- Teaser figure (replaces teaser video) -->
 <section class="section teaser-figure">
   <div class="container is-max-desktop">
-    <!-- The PNG -->
-    <figure class="teaser-media">
-      <!-- Put your png at: static/images/curlyfm_teaser.png (or rename accordingly) -->
-      <img
-        src="static/images/curlyfm_teaser.png"
-        alt="Curly-FM teaser figure"
-        loading="lazy"
-      />
-    </figure>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
 
-    <!-- Caption below -->
-    <p class="teaser-caption">
-      Traditional flow-based models such as <strong>Conditional Flow Matching</strong> cannot capture periodic patterns.
-      <span class="accent"><strong>Curly-FM</strong></span> learns <strong>non-gradient field</strong> trajectories
-      <span class="check" aria-label="success" title="success">✅</span>
-    </p>
+        <figure class="teaser-media">
+          <img
+            src="static/images/curlyfm_teaser.png"
+            alt="Curly-FM teaser figure"
+            loading="lazy"
+          />
+        </figure>
+
+        <p class="teaser-caption">
+          Traditional flow-based models such as <strong>Conditional Flow Matching</strong> cannot capture periodic patterns.
+          <span class="accent"><strong>Curly-FM</strong></span> learns <strong>non-gradient field</strong> trajectories
+          <span class="check" aria-label="success" title="success">✅</span>
+        </p>
+
+      </div>
+    </div>
   </div>
 </section>
 
