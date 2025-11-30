@@ -749,5 +749,40 @@ a:focus {
   }
 }
 
+/* Teaser figure block */
+.teaser-figure {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.teaser-figure .accent {
+  color: #6f2dbd;          /* Curly purple; tweak if needed */
+}
+
+.teaser-media {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.teaser-media img {
+  width: 100%;
+  max-width: 1100px;       /* controls how big it gets on desktop */
+  height: auto;
+  display: block;
+  border-radius: 12px;     /* optional, looks nice */
+}
+
+.teaser-caption {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 700;
+  text-align: left;
+}
+
+.teaser-caption .check {
+  margin-left: 0.35rem;
+}
+
 
 
