@@ -887,7 +887,9 @@ section.teaser-figure.section {
   margin: 0 !important;
 }
 .container.page-mid {
-  max-width: 1000px;      /* adjust: 1080 / 1120 / 1160 */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
