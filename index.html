@@ -380,44 +380,16 @@
         </div>
 
         <div class="columns is-variable is-6 algos-row">
-  <!-- Algorithm 1 -->
-  <div class="column">
-    <div class="algo-box">
-      <div class="algo-box-title">
-        <strong>Algorithm 1</strong> Training algorithm for neural path interpolant network
-      </div>
-      <pre class="algo-pre"><code><strong>Require:</strong> Marginals ρ₀(x₀) and ρ₁(x₁), network φ_η, reference drift f_{t,η}
-
-1: while Training do
-2: │   Sample (x₀, x₁, t) ~ ρ₀(x₀) ρ₁(x₁) 𝒰(0,1)
-3: │   μ_{t,η} = (1−t)x₀ + t x₁ + t(1−t) φ_{t,η}(x₀, x₁)
-4: │   ∂μ_{t,η}/∂t = x₁ − x₀ + t(1−t) ∂φ_{t,η}(x₀, x₁)/∂t + (1−2t) φ_{t,η}(x₀, x₁)
-5: │   ℒ(η) = ‖ ∂μ_{t,η}/∂t − f_{t,η}(μ_{t,η}) ‖₂²
-6: │   η ← Update(η, ∇_η ℒ(η))
-return φ_{t,η}</code></pre>
-    </div>
-  </div>
-
-  <!-- Algorithm 2 -->
-  <div class="column">
-    <div class="algo-box">
-      <div class="algo-box-title">
-        <strong>Algorithm 2</strong> Marginal Score and Flow Matching
-      </div>
-      <pre class="algo-pre"><code><strong>Require:</strong> Marginals ρ₀(x₀) and ρ₁(x₁), network φ_η, vector field network v_{t,θ}
-
-1: while Training do
-2: │   Sample (x₀, x₁, t_{ij}) ~ ρ₀(x₀) ρ₁(x₁) 𝒰(0,1)
-3: │   C_η^{ij}(x₀^i, x₁^j) = 𝔼_t [ ‖ ∂μ_{t,η}/∂t − f_{t,η}(μ_{t,η}) ‖₂² ]
-4: │   (x₀, x₁) ~ π(x₀, x₁) ← OT(x₀, x₁; C_η)
-5: │   t ~ 𝒰(0,1), ε ~ 𝒩(0,1)
-6: │   ℒ(θ) = ℒ_flow(θ) + ℒ_score(θ)
-7: │   θ ← Update(θ, ∇_θ ℒ(θ))
-return v_θ</code></pre>
-    </div>
+  <div class="column is-12">
+    <figure class="algo-figure">
+      <img
+        src="static/images/algorithms.png"
+        alt="Algorithms: Training neural path interpolant and Marginal Score + Flow Matching"
+        loading="lazy"
+      />
+    </figure>
   </div>
 </div>
-
 
 <section class="section">
   <div class="container is-max-desktop">
