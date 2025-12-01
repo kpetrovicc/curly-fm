@@ -847,5 +847,45 @@ section.teaser-figure.section {
   color: inherit !important;
 }
 
+/* Math callout boxes (lemma/theorem) */
+.callout {
+  border-radius: 10px;
+  padding: 1.25rem 1.25rem;
+  margin: 1.25rem 0;
+  border-left: 6px solid;        /* color set by modifier */
+}
+
+.callout.callout-warn {
+  background: #fbf5e6;           /* warm tint */
+  border-left-color: #e59a2f;    /* orange */
+}
+
+.callout.callout-ok {
+  background: #eaf4ea;           /* green tint */
+  border-left-color: #4caf50;    /* green */
+}
+
+.callout-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.callout-body {
+  color: #111827;
+  line-height: 1.7;
+}
+
+.callout-eq {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* Make MathJax match text size a bit nicer */
+.callout .mjx-container {
+  margin: 0 !important;
+}
+
 
 
