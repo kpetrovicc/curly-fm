@@ -886,6 +886,10 @@ section.teaser-figure.section {
 .callout .mjx-container {
   margin: 0 !important;
 }
-
+.container.page-mid {
+  max-width: 1120px;      /* adjust: 1080 / 1120 / 1160 */
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
 
 
