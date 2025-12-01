@@ -755,18 +755,18 @@ a:focus {
 
 /* Reduce space under the main button row */
 .publication-links {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Reduce bottom padding of the top hero (doesn't affect other sections) */
 .publication-header .hero-body {
-  padding-bottom: 1.25rem; /* was 4rem */
+  padding-bottom: 1.5rem; /* was 4rem */
 }
 
 /* Reduce top padding of the teaser section (Bulma .section is large by default) */
 section.teaser-figure.section {
-  padding-top: 0.75rem;
-  padding-bottom: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 
 /* Teaser figure block */
