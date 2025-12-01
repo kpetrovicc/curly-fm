@@ -356,7 +356,7 @@
     <div class="columns is-centered">
       <div class="column">
 
-        <h2 class="title is-3 has-text-centered eqm-title">Curly Flow Matching</h2>
+        <h2 class="title is-3 has-text-centered eqm-title">Introduction</h2>
 
         <div class="content eqm-text">
           <p>
@@ -451,18 +451,33 @@
 
         <div class="callout callout-ok">
           <div class="callout-title">
-            Schrödinger Bridge (non-zero drift)
+            Particle Evolution
             <span style="font-weight: 600;">(reference: informative drift)</span>
           </div>
           <div class="callout-eq">
-            $$\mathbb{P}^\star
-              = \arg\min_{\mathbb{P}}
-              \mathrm{KL}(\mathbb{P}\,\|\,\mathbb{Q})
-              \quad\text{s.t.}\quad
-              \mathbb{P}_0=\mu_0,\ \mathbb{P}_1=\mu_1,$$
-            $$\text{with } \mathbb{Q}:\ dX_t = b(t,X_t)\,dt + \sigma\, dW_t.$$
+            $$\mathrm{d}\mathbf{X}_t \;=\; v_{t,\theta}(\mathbf{X}_t)\,\mathrm{d}t \;+\; g_t\,\mathrm{d}\mathbf{B}_t$$
           </div>
         </div>
+
+        <div class="callout callout-ok">
+          <div class="callout-title">
+            Non-zero drift Reference Process
+            <span style="font-weight: 600;">(reference: informative drift)</span>
+          </div>
+          <div class="callout-eq">
+            $$\mathrm{d}\mathbf{X}_t \;=\; v_{t,\theta}(\mathbf{X}_t)\,\mathrm{d}t \;+\; g_t\,\mathrm{d}\mathbf{B}_t$$
+          </div>
+        </div>
+        To solve non-zero reference SB we construct neural bridge $\mathbb{Q}_{\nu,t}(\,\cdot \mid x_0,x_1)$ such that 
+        
+        <div class="callout callout-ok">
+          <div class="callout-eq">
+            $$\mathbb{Q}_t(\,\cdot \mid x_0,x_1)
+          = \mathcal{N}\!\left(x_t;\; \mu_{t,\nu},\; t(1-t)\sigma^2\right)$$
+          </div>
+        </div>
+
+        where $\mu_{t,\nu}$ is expressed as $$\mu_{t,\nu} = t x_1 + (1-t)x_0 + t(1-t)\varphi_{t,\eta}(x_0,x_1)$$
 
       </div>
     </div>
