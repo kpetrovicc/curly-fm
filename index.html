@@ -433,8 +433,8 @@
           </div>
 
           <div class="callout-eq">
-            $$\mathrm{d}\mathbf{X}_t \;=\; v_{t,\theta}(\mathbf{X}_t)\,\mathrm{d}t \;+\; g_t\,\mathrm{d}\mathbf{B}_t$$
-            $$\mathrm{d}\mathbf{X}_t \;=\; g_t\,\mathrm{d}\mathbf{B}_t$$
+            $$\mathrm{d}\mathbf{X}_t \;=\; v_{t,\theta}(\mathbf{X}_t)\,\mathrm{d}t \;+\; g_t\,\mathrm{d}\mathbf{B}_t \quad \text{particle evolution}$$ 
+            $$\mathrm{d}\mathbf{X}_t \;=\; g_t\,\mathrm{d}\mathbf{B}_t \qaud \text{reference process}$$
           </div>
         </div>
 
@@ -456,23 +456,15 @@
           In Curly-FM we consider non-zero drift reference process $\mathbb{Q}$ which unlike zero-drift SB does not have closed form solution. 
         </p>
 
-        <div class="callout callout-ok">
+        <div class="callout callout-warn">
           <div class="callout-title">
-            Particle Evolution
-            <span style="font-weight: 600;">(reference: informative drift)</span>
+            Schrödinger Bridge (zero drift)
+            <span style="font-weight: 600;">(reference: Brownian / zero drift)</span>
           </div>
-          <div class="callout-eq">
-            $$\mathrm{d}\mathbf{X}_t \;=\; v_{t,\theta}(\mathbf{X}_t)\,\mathrm{d}t \;+\; g_t\,\mathrm{d}\mathbf{B}_t$$
-          </div>
-        </div>
 
-        <div class="callout callout-ok">
-          <div class="callout-title">
-            Non-zero drift Reference Process
-            <span style="font-weight: 600;">(reference: informative drift)</span>
-          </div>
           <div class="callout-eq">
-            $$\mathrm{d}\mathbf{X}_t \;=\; v_{t,\theta}(\mathbf{X}_t)\,\mathrm{d}t \;+\; g_t\,\mathrm{d}\mathbf{B}_t$$
+            $$\mathrm{d}\mathbf{X}_t \;=\; v_{t,\theta}(\mathbf{X}_t)\,\mathrm{d}t \;+\; g_t\,\mathrm{d}\mathbf{B}_t \quad \text{particle evolution}$$ 
+            $$\mathrm{d}\mathbf{X}_t \;=\; f_t(\mathbf{X}_t)\,\mathrm{d}t \;+\; g_t\,\mathrm{d}\mathbf{B}_t \qaud \text{reference process}$$
           </div>
         </div>
 
@@ -488,7 +480,7 @@
         </div>
 
         <p>
-          where $\mu_{t,\nu}$ is expressed as
+          where $\mu_{t,\nu}$ is a neural interpolant with neural network $\varphi_{t,\eta}(x_0,x_1$ designed to match reference drift
           $$\mu_{t,\nu} = t x_1 + (1-t)x_0 + t(1-t)\varphi_{t,\eta}(x_0,x_1).$$
         </p>
 
