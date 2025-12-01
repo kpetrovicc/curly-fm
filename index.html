@@ -419,25 +419,95 @@ return v_θ</code></pre>
 </div>
 
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3 has-text-centered">Theory &amp; Framework</h2>
+
+        <!-- ===================== -->
+        <!-- Subsection 1: Goal     -->
+        <!-- ===================== -->
+        <h3 class="title is-4">Goal</h3>
+
+        <p>
+          We aim to learn transport dynamics between population marginals while leveraging a reference process over
+          trajectories. Unlike standard gradient-field assumptions, our target systems can exhibit non-gradient and
+          periodic behavior. We model this as a Schrödinger Bridge problem between path measures $\mathbb{P}$ for particle evolution and $\mathbb{Q}$ reference process.
+        </p>
+
+        <div class="callout callout-warn">
+          <div class="callout-title">
+            Schrödinger Bridge Problem (SB):
+            <span style="font-weight:600">Optimal path measure $\mathbb{P}^*$ can be found by minimizing KL divergence</span>
+          </div>
+
+          <div class="callout-eq">
+            $$\mathbb{P}^{*}
+            = \text{arg min}_{\theta}
+            \Big[ \mathrm{KL}\!\big(\mathbb{P}_{\theta}\,\|\,\mathbb{Q}\big)
+            :\ \mathbb{P}_{0}=\mu_{0},\ \mathbb{P}_{1}=\mu_{1}\Big]$$
           </div>
         </div>
+
+        <!-- ====================================== -->
+        <!-- Subsection 2: Zero-drift SB             -->
+        <!-- ====================================== -->
+        <h3 class="title is-4">Zero-drift Schrödinger Bridge</h3>
+
+        <p>
+          In classical Schrödinger bridge formulations, the reference process is typically a zero-drift diffusion
+          (e.g., Brownian motion). In such cases particle evolution and reference process are modeled as stochastic process via following Itô SDEs
+        </p>
+
+        <div class="callout callout-warn">
+          <div class="callout-title">
+            Schrödinger Bridge (zero drift)
+            <span style="font-weight: 600;">(reference: Brownian / zero drift)</span>
+          </div>
+        
+          <div class="callout-eq">
+            $$\mathrm{d}\mathbf{X}_t \;=\; v_{t,\theta}(\mathbf{X}_t)\,\mathrm{d}t \;+\; g_t\,\mathrm{d}\mathbf{B}_t$$
+            $$\mathrm{d}\mathbf{X}_t \;=\; g_t\,\mathrm{d}\mathbf{B}_t$$
+          </div>
+        </div>
+        The optimal bridge then takes form of Brownian bridge given as 
+        <div class="callout callout-ok">
+          <div class="callout-eq">
+            $$\mathbb{Q}_t(\,\cdot \mid x_0,x_1)
+          = \mathcal{N}\!\left(x_t;\; t x_1 + (1-t)x_0,\; t(1-t)\sigma^2\right)$$
+          </div>
+        </div>
+
+        <!-- ====================================== -->
+        <!-- Subsection 3: Non-zero drift SB         -->
+        <!-- ====================================== -->
+        <h3 class="title is-4">Non-zero-drift Schrödinger Bridge</h3>
+
+        <p>
+          In Curly-FM we consider non-zero drift reference process $\mathbb{Q}$ which unlike zero-drift SB does not have closed form solution. 
+        </p>
+
+        <div class="callout callout-ok">
+          <div class="callout-title">
+            Schrödinger Bridge (non-zero drift)
+            <span style="font-weight: 600;">(reference: informative drift)</span>
+          </div>
+          <div class="callout-eq">
+            $$\mathbb{P}^\star
+              = \arg\min_{\mathbb{P}}
+              \mathrm{KL}(\mathbb{P}\,\|\,\mathbb{Q})
+              \quad\text{s.t.}\quad
+              \mathbb{P}_0=\mu_0,\ \mathbb{P}_1=\mu_1,$$
+            $$\text{with } \mathbb{Q}:\ dX_t = b(t,X_t)\,dt + \sigma\, dW_t.$$
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
 
 
 <!-- Video carousel -->
